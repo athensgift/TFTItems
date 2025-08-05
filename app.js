@@ -4,13 +4,23 @@ async function fetchLatestVersion() {
   if (latestVersion) return latestVersion;
   const versionRes = await fetch('https://ddragon.leagueoflegends.com/api/versions.json');
   const versions = await versionRes.json();
-  latestVersion = versions[0];
+  for (const v of versions) {
+    const testRes = await fetch(
+      `https://ddragon.leagueoflegends.com/cdn/${v}/data/en_US/tft-champion.json`,
+      { method: 'HEAD' }
+    );
+    if (testRes.ok) {
+      latestVersion = v;
+      break;
+    }
+  }
   return latestVersion;
 }
 
 async function fetchChampions() {
   try {
     const latest = await fetchLatestVersion();
+    if (!latest) throw new Error('No TFT version available');
     const [championsRes, itemsRes, recRes] = await Promise.all([
       fetch(`https://ddragon.leagueoflegends.com/cdn/${latest}/data/en_US/tft-champion.json`),
       fetch(`https://ddragon.leagueoflegends.com/cdn/${latest}/data/en_US/tft-item.json`),
@@ -65,6 +75,7 @@ async function fetchChampions() {
 async function fetchItems() {
   try {
     const latest = await fetchLatestVersion();
+    if (!latest) throw new Error('No TFT version available');
     const itemsRes = await fetch(`https://ddragon.leagueoflegends.com/cdn/${latest}/data/en_US/tft-item.json`);
     const itemsData = await itemsRes.json();
     const itemsList = document.getElementById('itemsList');
@@ -123,6 +134,7 @@ function setupTabs() {
 async function fetchComps() {
   try {
     const latest = await fetchLatestVersion();
+    if (!latest) throw new Error('No TFT version available');
     const [championsRes, recRes] = await Promise.all([
       fetch(`https://ddragon.leagueoflegends.com/cdn/${latest}/data/en_US/tft-champion.json`),
       fetch('recommendations.json')
