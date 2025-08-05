@@ -1,0 +1,8 @@
+{
+  "name": "tftitems",
+  "version": "1.0.0",
+  "description": "Helps you with tft items and champions",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  }
+}
