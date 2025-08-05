@@ -29,3 +29,26 @@ body {
 .content.active {
   display: block;
 }
+
+#itemsList,
+#championsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#itemsList li,
+#championsList li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+#itemsList img,
+#championsList img {
+  width: 64px;
+  height: 64px;
+}
