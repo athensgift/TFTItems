@@ -1,0 +1,31 @@
+{
+  "comps": [
+    {
+      "name": "Blade Master Squad",
+      "popularity": 95,
+      "champions": ["Aatrox", "Yasuo", "Sett", "Kayn", "Riven", "Aphelios", "Urgot"]
+    },
+    {
+      "name": "Arcane Aces",
+      "popularity": 88,
+      "champions": ["Ahri", "Lux", "Syndra", "Janna", "Ziggs", "Morgana", "Seraphine"]
+    }
+  ],
+  "championItems": {
+    "Aatrox": [
+      {"name": "Bloodthirster", "priority": 1},
+      {"name": "Titan's Resolve", "priority": 2},
+      {"name": "Infinity Edge", "priority": 3}
+    ],
+    "Yasuo": [
+      {"name": "Hand of Justice", "priority": 1},
+      {"name": "Infinity Edge", "priority": 2},
+      {"name": "Bloodthirster", "priority": 3}
+    ],
+    "Ahri": [
+      {"name": "Blue Buff", "priority": 1},
+      {"name": "Jeweled Gauntlet", "priority": 2},
+      {"name": "Giant Slayer", "priority": 3}
+    ]
+  }
+}

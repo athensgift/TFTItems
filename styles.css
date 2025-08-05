@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.tab.active {
+  background-color: #d0d0d0;
+  font-weight: bold;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+#itemsList,
+#championsList,
+#compsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#itemsList li,
+#championsList li,
+#compsList li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+#itemsList img,
+#championsList img,
+#compsList img {
+  width: 64px;
+  height: 64px;
+}
+
+.champion-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.champion-items li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: auto;
+}
+
+.champion-items img {
+  width: 32px;
+  height: 32px;
+}
+
+#compsList .comp-champions {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+  justify-content: center;
+}
+
+#compsList .comp-champions li {
+  width: 40px;
+}
+
+#compsList .comp-title {
+  font-weight: bold;
+  text-align: center;
+}
